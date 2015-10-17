@@ -1,6 +1,6 @@
 <?php
 class indexController extends BaseController {
-
+ #cambio
 	public function index() {
 		if ($_SESSION['autorized'] != 1 && $this->checkCookie()==false) {
 			header("Location: /admin/index/login");
