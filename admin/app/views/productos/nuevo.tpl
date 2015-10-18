@@ -10,6 +10,7 @@
     .image-preview-holder a.button{display:block;text-align:center;}
     .filtros{width: 170px; float: left; border: 1px #ccc solid; margin: 5px; padding: 5px;}
     .check{width: 15px !important;}
+    .presentaciones{width: 125px; background-color: #ddd; height: 40px; float: left; padding: 5px; margin: 5px;}
 </style>
 </head>
 
@@ -68,10 +69,12 @@
                                     <textarea class="form-control" id="Descripcion" name="Descripcion" rows="3">{$Descripcion}</textarea>
                                 </div>
                                <div class="form-group">
-                                    <label>Presentaciones</label>
+                                    <label class="pull-left">Presentaciones</label>
+                                    <div style="clear:both"></div>
                                     {loop="presentaciones"}
-                                        <li>{$value.Presentacion} <input type="checkbox" name="Presentacion[]" id="Presentacion-{$key}" value="{$value.Id}"  {if="$value.Producto>0"}checked{/if}>
+                                        <div class="presentaciones">{$value.Presentacion} <input type="checkbox" name="Presentacion[]" id="Presentacion-{$key}" value="{$value.Id}"  {if="$value.Producto>0"}checked{/if}></div>
                                     {/loop}
+                                   
                                 </div>
                             </div>
 

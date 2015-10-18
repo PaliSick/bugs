@@ -36,7 +36,7 @@
 	$router->addRule('/ayuda', array('controller' => 'index', 'action' => 'ayuda'));
 	$router->addRule('/consultas', array('controller' => 'index', 'action' => 'consultas'));
 	$router->addRule('/casos-reales', array('controller' => 'index', 'action' => 'casos_reales'));
-		$router->addRule('/politica-de-privacidad', array('controller' => 'index', 'action' => 'politica'));
+	$router->addRule('/politica-de-privacidad', array('controller' => 'index', 'action' => 'politica'));
 	$router->init($baseDir);
 	
 	//Determina e instancia el Controller
@@ -45,10 +45,11 @@
 	$controllerFile = './app/controllers/'. $controller . '_controller.php';
 	DEFINE('CURRENT_CONTROLLER', $controller);
 
-	if (CURRENT_CONTROLLER != 'index' && $_SESSION['autorized'] != 1) {
-		header("Location: /admin/index/login");
-	}	
+	if ( $_SESSION['autorized'] != 1 && $_SERVER['REQUEST_URI']!='/admin/index/login') {
 	
+		header("Location: /admin/index/login");
+	}
+
 	//Verifica que el archivo del controller exista
 	$error=0;
 	if (!is_file($controllerFile)) {
