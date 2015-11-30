@@ -3,7 +3,7 @@
 *
 * -------------------------------------------------------
 * CLASSNAME:        Tarifas
-* GENERATION DATE:  16.09.2015
+* GENERATION DATE:  30.11.2015
 * CLASS FILE:       /home/palisick/domains/bugsalimentos.com/public_html/tools/generated_classes/Tarifas.class.php
 * FOR MYSQL TABLE:  Tarifas
 * FOR MYSQL DB:     palisick_bugs
@@ -23,10 +23,9 @@ class Tarifas extends QueryBuilder {
 
 
 	protected $Id;
-	protected $Lista;
-	protected $Contado;
-	protected $Debito;
-	protected $Credito;
+	protected $Tarifa;
+	protected $Normal;
+	protected $Deleted;
 
 	// **********************
 	// CONSTRUCTOR METHOD
@@ -44,20 +43,16 @@ class Tarifas extends QueryBuilder {
 		return $this->Id;
 	}
 
-	public function getLista() {
-		return $this->Lista;
+	public function getTarifa() {
+		return $this->Tarifa;
 	}
 
-	public function getContado() {
-		return $this->Contado;
+	public function getNormal() {
+		return $this->Normal;
 	}
 
-	public function getDebito() {
-		return $this->Debito;
-	}
-
-	public function getCredito() {
-		return $this->Credito;
+	public function getDeleted() {
+		return $this->Deleted;
 	}
 
 	// **********************
@@ -69,20 +64,16 @@ class Tarifas extends QueryBuilder {
 		$this->Id =  $val;
 	}
 
-	public function setLista($val) {
-		$this->Lista =  $val;
+	public function setTarifa($val) {
+		$this->Tarifa =  $val;
 	}
 
-	public function setContado($val) {
-		$this->Contado =  $val;
+	public function setNormal($val) {
+		$this->Normal =  $val;
 	}
 
-	public function setDebito($val) {
-		$this->Debito =  $val;
-	}
-
-	public function setCredito($val) {
-		$this->Credito =  $val;
+	public function setDeleted($val) {
+		$this->Deleted =  $val;
 	}
 
 

@@ -3,7 +3,7 @@
 *
 * -------------------------------------------------------
 * CLASSNAME:        Productos
-* GENERATION DATE:  16.09.2015
+* GENERATION DATE:  30.11.2015
 * CLASS FILE:       /home/palisick/domains/bugsalimentos.com/public_html/tools/generated_classes/Productos.class.php
 * FOR MYSQL TABLE:  Productos
 * FOR MYSQL DB:     palisick_bugs
@@ -35,8 +35,6 @@ class Productos extends QueryBuilder {
 	protected $Fotos;
 	protected $Oferta;
 	protected $Costo;
-	protected $Precio;
-	protected $Id_tarifa;
 
 	// **********************
 	// CONSTRUCTOR METHOD
@@ -102,14 +100,6 @@ class Productos extends QueryBuilder {
 		return $this->Costo;
 	}
 
-	public function getPrecio() {
-		return $this->Precio;
-	}
-
-	public function getId_tarifa() {
-		return $this->Id_tarifa;
-	}
-
 	// **********************
 	// SETTER METHODS
 	// **********************
@@ -165,14 +155,6 @@ class Productos extends QueryBuilder {
 
 	public function setCosto($val) {
 		$this->Costo =  $val;
-	}
-
-	public function setPrecio($val) {
-		$this->Precio =  $val;
-	}
-
-	public function setId_tarifa($val) {
-		$this->Id_tarifa =  $val;
 	}
 
 

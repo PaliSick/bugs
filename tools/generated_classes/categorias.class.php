@@ -3,7 +3,7 @@
 *
 * -------------------------------------------------------
 * CLASSNAME:        Categorias
-* GENERATION DATE:  16.09.2015
+* GENERATION DATE:  30.11.2015
 * CLASS FILE:       /home/palisick/domains/bugsalimentos.com/public_html/tools/generated_classes/Categorias.class.php
 * FOR MYSQL TABLE:  Categorias
 * FOR MYSQL DB:     palisick_bugs

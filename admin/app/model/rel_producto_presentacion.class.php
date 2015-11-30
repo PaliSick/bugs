@@ -3,7 +3,7 @@
 *
 * -------------------------------------------------------
 * CLASSNAME:        Rel_Producto_Presentacion
-* GENERATION DATE:  16.09.2015
+* GENERATION DATE:  30.11.2015
 * CLASS FILE:       /home/palisick/domains/bugsalimentos.com/public_html/tools/generated_classes/Rel_Producto_Presentacion.class.php
 * FOR MYSQL TABLE:  Rel_Producto_Presentacion
 * FOR MYSQL DB:     palisick_bugs
@@ -25,9 +25,6 @@ class Rel_Producto_Presentacion extends QueryBuilder {
 	protected $Id;
 	protected $Id_producto;
 	protected $Id_presentacion;
-	protected $Contado;
-	protected $Debito;
-	protected $Credito;
 
 	// **********************
 	// CONSTRUCTOR METHOD
@@ -53,18 +50,6 @@ class Rel_Producto_Presentacion extends QueryBuilder {
 		return $this->Id_presentacion;
 	}
 
-	public function getContado() {
-		return $this->Contado;
-	}
-
-	public function getDebito() {
-		return $this->Debito;
-	}
-
-	public function getCredito() {
-		return $this->Credito;
-	}
-
 	// **********************
 	// SETTER METHODS
 	// **********************
@@ -80,18 +65,6 @@ class Rel_Producto_Presentacion extends QueryBuilder {
 
 	public function setId_presentacion($val) {
 		$this->Id_presentacion =  $val;
-	}
-
-	public function setContado($val) {
-		$this->Contado =  $val;
-	}
-
-	public function setDebito($val) {
-		$this->Debito =  $val;
-	}
-
-	public function setCredito($val) {
-		$this->Credito =  $val;
 	}
 
 

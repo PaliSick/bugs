@@ -3,7 +3,7 @@
 *
 * -------------------------------------------------------
 * CLASSNAME:        Marcas
-* GENERATION DATE:  16.09.2015
+* GENERATION DATE:  30.11.2015
 * CLASS FILE:       /home/palisick/domains/bugsalimentos.com/public_html/tools/generated_classes/Marcas.class.php
 * FOR MYSQL TABLE:  Marcas
 * FOR MYSQL DB:     palisick_bugs

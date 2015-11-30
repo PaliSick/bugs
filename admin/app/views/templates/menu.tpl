@@ -74,6 +74,9 @@
                                 <li>
                                     <a href="parametros/presentaciones" {$menu.6}>Presentaciones</a>
                                 </li>
+                                <li>
+                                    <a href="parametros/tarifas" {$menu.7}>Tarifas</a>
+                                </li>
                             </ul>                            
                         </li>
                     </ul>

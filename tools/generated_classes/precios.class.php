@@ -2,10 +2,10 @@
 /*
 *
 * -------------------------------------------------------
-* CLASSNAME:        Rel_Producto_Presentacion
+* CLASSNAME:        Precios
 * GENERATION DATE:  30.11.2015
-* CLASS FILE:       /home/palisick/domains/bugsalimentos.com/public_html/tools/generated_classes/Rel_Producto_Presentacion.class.php
-* FOR MYSQL TABLE:  Rel_Producto_Presentacion
+* CLASS FILE:       /home/palisick/domains/bugsalimentos.com/public_html/tools/generated_classes/Precios.class.php
+* FOR MYSQL TABLE:  Precios
 * FOR MYSQL DB:     palisick_bugs
 * -------------------------------------------------------
 */
@@ -14,7 +14,7 @@
 // CLASS DECLARATION
 // **********************
 
-class Rel_Producto_Presentacion extends QueryBuilder {
+class Precios extends QueryBuilder {
 
 
 	// **********************
@@ -24,13 +24,18 @@ class Rel_Producto_Presentacion extends QueryBuilder {
 
 	protected $Id;
 	protected $Id_producto;
+	protected $Id_tarifa;
 	protected $Id_presentacion;
+	protected $Precio;
+	protected $Detalle;
+	protected $Fecha;
+	protected $Deleted;
 
 	// **********************
 	// CONSTRUCTOR METHOD
 	// **********************
 
-	public function Rel_Producto_Presentacion() {}
+	public function Precios() {}
 
 
 	// **********************
@@ -46,8 +51,28 @@ class Rel_Producto_Presentacion extends QueryBuilder {
 		return $this->Id_producto;
 	}
 
+	public function getId_tarifa() {
+		return $this->Id_tarifa;
+	}
+
 	public function getId_presentacion() {
 		return $this->Id_presentacion;
+	}
+
+	public function getPrecio() {
+		return $this->Precio;
+	}
+
+	public function getDetalle() {
+		return $this->Detalle;
+	}
+
+	public function getFecha() {
+		return $this->Fecha;
+	}
+
+	public function getDeleted() {
+		return $this->Deleted;
 	}
 
 	// **********************
@@ -63,8 +88,28 @@ class Rel_Producto_Presentacion extends QueryBuilder {
 		$this->Id_producto =  $val;
 	}
 
+	public function setId_tarifa($val) {
+		$this->Id_tarifa =  $val;
+	}
+
 	public function setId_presentacion($val) {
 		$this->Id_presentacion =  $val;
+	}
+
+	public function setPrecio($val) {
+		$this->Precio =  $val;
+	}
+
+	public function setDetalle($val) {
+		$this->Detalle =  $val;
+	}
+
+	public function setFecha($val) {
+		$this->Fecha =  $val;
+	}
+
+	public function setDeleted($val) {
+		$this->Deleted =  $val;
 	}
 
 

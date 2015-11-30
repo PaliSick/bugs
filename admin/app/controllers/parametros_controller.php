@@ -347,4 +347,92 @@ class parametrosController extends BaseController {
 		return false;		
 	}	
 
+	//Tarigas
+	public function tarifas()
+	{
+
+		if (Router::getParam(0) == 'alert') {
+			$msgType = Router::getParam(1);
+			$msg = Router::getParam(2);
+			if ($msgType && $msg) {
+				$this->tpl->assign('msg', $msg);
+				$this->tpl->assign('msgType', $msgType);
+			}
+		}		
+		$this->tpl->assign('menu', array("7"=>' class="active"'));
+		$this->tpl->assign('tarifas',  DBManager::customQuery('Tarifas', "SELECT Id,Tarifa, Normal FROM Tarifas WHERE Deleted=0" , array(),false));
+		
+		echo $this->renderAction("parametros/tarifas");
+	}
+
+
+	public function getTarifa() {
+		$error = '';
+		$r = Router::getInstance();
+		$id =$r->getParam(0);
+		
+		if ($id>0){
+			$Tarifas=DBManager::selectClassById('Tarifas', $id, false);			
+			echo str_replace('\\/', '/', json_encode($Tarifas, JSON_HEX_TAG | JSON_HEX_QUOT | JSON_HEX_APOS));
+		}else
+			echo '{"status": "error", "info": "'.$error.'"}';
+	}
+
+	public function submit_tarifa()
+	{
+		$update = isset($_POST['Id']) && (int)$_POST['Id'] != 0;
+
+		
+		if ($update) {
+
+			$Tarifa = DBManager::selectClassById('Tarifas', (int)$_POST['Id'], true);
+		} else {
+			
+			$Tarifa = new Tarifas();
+		}
+
+		$Tarifa->setTarifa($_POST['Tarifa']);
+		$Tarifa->setNormal($_POST['Normal']);
+		$Tarifa->setDeleted(0);
+		try{			
+			if ($update) {
+				DBManager::Update($Tarifa);
+			}else{
+				DBManager::Insert($Tarifa);
+			}
+					
+		} catch (Exception $e) {
+			
+			$r = array('status' => 'error','info'=> 'Error, al insertar la tarifa'.$e->getMessage());
+			echo json_encode($r);
+			
+		}
+		$r = array('status' => 'ok','info'=> 'La tarifa se dío de alta correctamente');
+		echo json_encode($r);
+	}
+
+
+
+	public function deleteTarifa()
+	{
+		$router = Router::getInstance();
+		$id = (int)$router->getParam(0);
+
+		try {
+			$Tarifas = DBManager::selectClassById('Tarifas', $id, true);
+
+			DBManager::delete($Tarifas);
+			
+		} catch (Exception $e) {
+			$r = array('status' => 'error');
+			echo json_encode($r);
+			return false;
+		}
+		
+		$r = array('status' => 'ok');
+		echo json_encode($r);
+		return false;		
+	}
+
+
 }
